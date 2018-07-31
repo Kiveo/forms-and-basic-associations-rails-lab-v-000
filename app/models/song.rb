@@ -20,7 +20,7 @@ class Song < ActiveRecord::Base
   end
 
   # setter 1. sets notes, 2. adds to existing, 3. ignores blank notes
-  def note_contents=(contents) #working with a collection, not a singular value. Add value to .notes
+  def note_contents=(contents) #working with a collection, not a singular value. build values in .notes
     contents.each do |content|
       self.notes.build(content: content) if content != ""
     end
